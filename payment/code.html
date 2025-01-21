@@ -23,19 +23,42 @@
         </nav>
         <div>
             <p class="bg-[#222630] px-4 py-3 h-14 text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" id="code"></p>
-            <button onclick="navigator.clipboard.writeText(code)" class="relative my-3 inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
+            <button onclick="copyCode()" class="relative my-3 inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-none">
                 <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#e7029a_0%,#f472b6_50%,#bd5fff_100%)]"></span>
                 <span class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-slate-950 px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
                     Copy GiftCode <i class="fa-solid fa-copy"></i>
                 </span>
             </button>
-
         </div>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Code copied to clipboard!</span>
+        </div>
+
         <script>
             var urlParams = new URLSearchParams(window.location.search);
             var code = urlParams.get('code');
-            document.getElementById("code").innerText = code
+            document.getElementById("code").innerText = code;
+
+            function copyCode() {
+                navigator.clipboard.writeText(code)
+                    .then(() => {
+                        showToast();
+                    })
+                    .catch(err => {
+                        console.error('Failed to copy:', err);
+                    });
+            }
+
+            function showToast() {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 3000);
+            }
         </script>
     </body>
 </html>
-
