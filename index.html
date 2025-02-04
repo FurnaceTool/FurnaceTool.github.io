@@ -103,7 +103,7 @@
                 <input id="size-width" class="bg-[#282c38] rounded-sm shadow-sm w-1/2 h-8 pl-1.5" type="number" placeholder="Gui Width">
                 <input id="size-height" class="bg-[#282c38] rounded-sm shadow-sm w-1/2 h-8 pl-1.5" type="number" placeholder="Gui Height">
             </div>
-            <select id="gui-bg" class="bg-[#282c38] rounded-sm shadow-sm h-8 w-1/2 pl-1.5" onchange="document.getElementById('gui-bg-image').src = `/src/images/generic_${this.value}.png`">
+            <select id="gui-bg" class="bg-[#282c38] rounded-sm shadow-sm h-8 w-1/2 pl-1.5" onchange="document.getElementById('gui-bg-image').src = `/src/images/generic_${this.value || 54}.png`">
                 <option value="">Row: Null</option>
                 <option value="54">Row: 54</option>
                 <option value="45">Row: 45</option>

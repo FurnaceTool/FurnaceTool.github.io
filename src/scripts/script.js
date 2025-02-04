@@ -230,12 +230,12 @@ function add_content() {
             if (offset_x !== "" || offset_y !== "") { properties["gui"]["offset"] = [offset_x || 0, offset_y || 0] }
             if (size_x !== "" || size_y !== "") { properties["gui"]["size"] = [size_x || "default", size_y || "default"] }
         }
-        if (Object.keys(properties).length !== 0) {
-            if (!code_obj["fonts"]) {
-                code_obj["fonts"] = {}
-            }
-            code_obj["fonts"][symbol] = properties
+        if (Object.keys(properties).length === 0) return
+        
+        if (!code_obj["fonts"]) {
+            code_obj["fonts"] = {}
         }
+        code_obj["fonts"][symbol] = properties
 
         document.getElementById("symbol").value = ""
         document.getElementById("ignore").value = ""
