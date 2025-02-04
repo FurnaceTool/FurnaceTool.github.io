@@ -103,35 +103,21 @@
                 <input id="size-width" class="bg-[#282c38] rounded-sm shadow-sm w-1/2 h-8 pl-1.5" type="number" placeholder="Gui Width">
                 <input id="size-height" class="bg-[#282c38] rounded-sm shadow-sm w-1/2 h-8 pl-1.5" type="number" placeholder="Gui Height">
             </div>
-            <div class="flex flex-row w-1/2 gap-x-1.5">
-                <select id="smallchest" class="bg-[#282c38] rounded-sm shadow-sm w-1/2 h-8 pl-1.5">
-                    <option value="">Gui Small Chest: Null</option>
-                    <option value="true">Gui Small Chest: True</option>
-                    <option value="false">Gui Small Chest: False</option>
-                </select>
-                <select id="largechest" class="bg-[#282c38] rounded-sm shadow-sm w-1/2 h-8 pl-1.5">
-                    <option value="">Gui Large Chest: Null</option>
-                    <option value="true">Gui Large Chest: True</option>
-                    <option value="false">Gui Large Chest: False</option>
-                </select>
-            </div>
-            <div class="flex flex-row w-1/2 gap-x-1.5">
-                <input id="gui-image-upload" type="file" accept="image/*" onchange="change_gui_image(event)" hidden>
-                <label id="gui-image-label" for="gui-image-upload" class="bg-[#282c38] rounded-sm shadow-sm h-8 w-1/2 pl-1.5 block content-center truncate">Upload Gui Texture</label>
-                <select id="gui-bg" class="bg-[#282c38] rounded-sm shadow-sm h-8 w-1/2 pl-1.5" onchange="document.getElementById('gui-bg-image').src = `/src/images/generic_${this.value}.png`">
-                    <option value="54">Row: 54</option>
-                    <option value="45">Row: 45</option>
-                    <option value="36">Row: 36</option>
-                    <option value="27">Row: 27</option>
-                    <option value="18">Row: 18</option>
-                    <option value="9">Row: 9</option>
-                    <option value="5">Row: 5</option>
-                </select>
-            </div>
+            <select id="gui-bg" class="bg-[#282c38] rounded-sm shadow-sm h-8 w-1/2 pl-1.5" onchange="document.getElementById('gui-bg-image').src = `/src/images/generic_${this.value}.png`">
+                <option value="54">Row: 54</option>
+                <option value="45">Row: 45</option>
+                <option value="36">Row: 36</option>
+                <option value="27">Row: 27</option>
+                <option value="18">Row: 18</option>
+                <option value="9">Row: 9</option>
+                <option value="5">Row: 5</option>
+            </select>
+            <input id="gui-image-upload" type="file" accept="image/*" onchange="change_gui_image(event)" hidden>
+            <label id="gui-image-label" for="gui-image-upload" class="bg-[#282c38] rounded-sm shadow-sm h-8 w-1/2 pl-1.5 block content-center truncate">Upload Gui Texture</label>
             <div class="flex items-center gap-2 w-1/2 bg-[#282c38] rounded-sm shadow-sm">
                 <div id="opacity-div" class="w-1/3 text-nowrap overflow-hidden">
                     <label id="opacity-label" for="opacity-gui" class="pl-1.5 overflow-hidden whitespace-nowrap">GUI Opacity: </label>
-                    <span id="opacity-value" class="inline-block" style="margin-left: 5px;">100</span>%
+                    <span id="opacity-value" class="inline-block ml-1.5">100</span>%
                 </div>
                 <input id="opacity-gui" oninput="change_gui_opacity()" type="range" min="0" max="1" step="0.01" value="1" class="bg-[#282c38] accent-gray-700 rounded-sm h-8 w-2/3" style="transform: translateX(-5px);">
             </div>

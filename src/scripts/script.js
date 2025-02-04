@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const $ = (id) => document.getElementById(id);
-    const JsonEditor = ace.edit("jsonview");
-    const guiImage = $("gui-image");
+    const urlParams = new URLSearchParams(window.location.search)
+    change_mode(urlParams.get('mode') || "mode-settings")
+    
+    const $ = (id) => document.getElementById(id)
+    const JsonEditor = ace.edit("jsonview")
+    const guiImage = $("gui-image")
 
     const setupDragAndDrop = (input, label, onDrop, dragText = "Drag & Drop to Upload") => {
         const originalText = label.innerHTML
@@ -216,17 +219,16 @@ function add_content() {
         const size_x = document.getElementById("size-width").value != "" ? parseInt(document.getElementById("size-width").value) : ""
         const size_y = document.getElementById("size-height").value != "" ? parseInt(document.getElementById("size-height").value) : ""
         const ignore = document.getElementById("ignore").value != "" ? document.getElementById("ignore").value.toLowerCase() === "true" : ""
-        const smallchest = document.getElementById("smallchest").value != "" ? document.getElementById("smallchest").value.toLowerCase() === "true" : ""
-        const largechest = document.getElementById("largechest").value != "" ? document.getElementById("largechest").value.toLowerCase() === "true" : ""
+        const row = document.getElementById("gui-bg").value != "" ? parseInt(document.getElementById("gui-bg").value) : ""
 
         const properties = {}
+        if (symbol === "") return
         if (ignore !== "") { properties["ignore"] = true }
-        if (smallchest !== "" || largechest !== "") {
+        if (row !== "") {
             properties["gui"] = {}
+            properties["gui"]["row"] = row
             if (offset_x !== "" || offset_y !== "") { properties["gui"]["offset"] = [offset_x || 0, offset_y || 0] }
             if (size_x !== "" || size_y !== "") { properties["gui"]["size"] = [size_x || "default", size_y || "default"] }
-            if (smallchest !== "") { properties["gui"]["smallchest"] = true }
-            if (largechest !== "") { properties["gui"]["largechest"] = true }
         }
         if (Object.keys(properties).length !== 0) {
             if (!code_obj["fonts"]) {
@@ -241,8 +243,7 @@ function add_content() {
         document.getElementById("offset-y").value = ""
         document.getElementById("size-width").value = ""
         document.getElementById("size-height").value = ""
-        document.getElementById("smallchest").value = ""
-        document.getElementById("largechest").value = ""
+        document.getElementById("gui-bg").value = "54"
     }
     const code_str = JSON.stringify(code_obj, (key, value) => { return Array.isArray(value) ? JSON.stringify(value) : value }, "\t").replace(/"\[(.*?)\]"/g, "[$1]")
     ace.edit("jsonview").setValue(code_str)
@@ -317,6 +318,12 @@ function change_mode(mode_enable) {
         if (element.classList.contains("flex")) element.classList.replace("flex", "hidden")
     }
     document.getElementById(mode_enable).classList.replace("hidden", "flex")
+
+    const urlParams = new URLSearchParams(window.location.search)
+    urlParams.set('mode', mode_enable)
+    const newUrl = `${window.location.pathname}?${urlParams.toString()}`
+    window.history.replaceState(null, '', newUrl)
+
     if (mode_enable === "mode-fonts") resize_gui_preview()
 }
 
