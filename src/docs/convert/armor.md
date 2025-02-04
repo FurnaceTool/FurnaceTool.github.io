@@ -1,6 +1,8 @@
 # Custom Armor
 Because armor has many ways to be displayed in Minecraft Java, it can only be manually converted.
 
+---
+
 ## How to convert armor
 You will need to use **furnace.json** to customize this. You will need to have an armor layer in your Java Edition resourcepack [(or you can add it after converting)](#auto-copy-armor-texture).
 
@@ -44,3 +46,4 @@ If it is disabled, the texture you enter will be used for the attachables of the
     If you enter `assets/furnace/textures/armor_layer.png`, it will be converted to `textures/models/armor/furnace/{iditem}.png`
 !!! note "Example 2: Disable auto_copy_texture"
     If you enter `textures/armor_layer.png`, it will remain unchanged when added to the Bedrock attachables
+---

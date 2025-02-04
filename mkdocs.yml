@@ -39,3 +39,4 @@ nav:
   - Home: index.md
   - Convert:
     - Armor: convert/armor.md
+    - Font&Gui: convert/font&gui.md
