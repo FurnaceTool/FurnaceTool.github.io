@@ -60,9 +60,8 @@ Example:
 			"ignore": true,
 			"gui": {
 				"offset": [40,21],
-				"smallchest": true,
-				"largechest": true
-			}
+				"row": 54,
+            }
 		}
 	}
 }
