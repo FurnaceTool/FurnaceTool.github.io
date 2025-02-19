@@ -36,10 +36,13 @@ markdown_extensions:
   - admonition
   - pymdownx.details
 nav:
-  - Home: index.md
-  - Convert:
-    - Items:
-      - Armor: convert/items/armor.md
-    - Font & GUI:
-      - Custom Font: convert/fonts/font.md
-      - GUI: convert/fonts/gui.md
+  - 🏠Home: index.md
+  - 🔥Convert:
+    - ⚡Furnace.JSON: convert/furnacejson.md
+    - 🧪Common Bugs:
+      - 🛡ItemsAdder Protection: convert/bugs/ia_protection_pack.md
+    - ⛏Items:
+      - 🧢Armor: convert/items/armor.md
+    - 🖼Font & GUI:
+      - ⚗Custom Font: convert/fonts/font.md
+      - 🧫GUI: convert/fonts/gui.md

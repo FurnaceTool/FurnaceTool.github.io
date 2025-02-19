@@ -29,7 +29,7 @@ Because GUI in java is a font need offset but bedrock can't offset font, so you 
     }
     ```
 
-```json hl_lines="3-6"
+```json hl_lines="4-7"
 {
     "fonts": {
         "0xEE01": {
