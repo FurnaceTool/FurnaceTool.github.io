@@ -8,8 +8,27 @@ theme:
   name: material
   logo: https://furnacetool.github.io/src/images/logo-nobg.png
   favicon: https://furnacetool.github.io/src/images/logo.png
+  icon:
+    furnace_fire_16: fontawesome/solid/fire
   palette:
-    scheme: slate
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
   features:
     - content.code.copy
 extra_css:
@@ -26,6 +45,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -35,14 +56,17 @@ markdown_extensions:
   - pymdownx.superfences
   - admonition
   - pymdownx.details
+extra_css:
+  - stylesheets/extra.css
 nav:
-  - 🏠Home: index.md
-  - 🔥Convert:
-    - ⚡Furnace.JSON: convert/furnacejson.md
-    - 🧪Common Bugs:
-      - 🛡ItemsAdder Protection: convert/bugs/ia_protection_pack.md
-    - ⛏Items:
-      - 🧢Armor: convert/items/armor.md
-    - 🖼Font & GUI:
-      - ⚗Custom Font: convert/fonts/font.md
-      - 🧫GUI: convert/fonts/gui.md
+  - Home: index.md
+  - Convert: 
+    - How to convert: convert/how_to_convert.md
+    - Furnace.json: convert/furnacejson.md
+    - Common Bugs:
+      - ItemsAdder Protection: convert/bugs/ia_protection_pack.md
+    - Items:
+      - Armor: convert/items/armor.md
+    - Font & GUI:
+      - Custom Font: convert/fonts/font.md
+      - GUI: convert/fonts/gui.md

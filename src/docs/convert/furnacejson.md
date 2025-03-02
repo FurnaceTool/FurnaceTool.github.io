@@ -1,5 +1,10 @@
+---
+icon: octicons/book-16
+---
 # About furnace.json
 The `furnace.json` file is a JSON file that contains the configuration for the furnace converter. If anyone has ever used java2bedrock.sh, then `furnace.json` is the same as `sprites.json`
+
+---
 
 ## Editor For furnace.json
 We have made a tool to write furnace.json simpler and avoid json syntax errors
@@ -60,3 +65,5 @@ Example:
 ├── 📂pack.mcmeta
 └── 📂furnace.json
 ```
+
+---

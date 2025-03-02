@@ -1,12 +1,19 @@
+---
+icon: material/shield-outline
+---
 # Custom Armor
 Because armor has many ways to be displayed in Minecraft Java, it can only be manually converted.
 
 ---
 
-!!! note "Auto Generate Custom Armor"
-	We have made a tool to be able to automatically export armor from the config of ItemsAdder and some other plugins to **furnace.json** and texture armor to the folder to merge with the resourcepack after conversion.
+## Auto Generate Custom Armor
+We have made a tool to be able to automatically export armor from the config of ItemsAdder and some other plugins to **furnace.json** and texture armor to the folder to merge with the resourcepack after conversion.
 
-	[Auto Generate Custom Armor](https://github.com/FurnaceTool/ArmorExtract)
+<div class="grid cards" markdown>
+
+-   [:octicons-arrow-right-24: **Auto Generate Custom Armor**](https://github.com/FurnaceTool/ArmorExtract)  
+
+</div> 
 
 ## How to convert armor
 You will need to use **furnace.json** to customize this. You will need to have an armor layer in your Java Edition resourcepack [(or you can add it after converting)](#auto-copy-armor-texture).

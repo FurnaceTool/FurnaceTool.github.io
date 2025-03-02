@@ -1,0 +1,5 @@
+.md-typeset .grid.cards > ol > li, .md-typeset .grid.cards > ul > li, .md-typeset .grid > .card > hr {
+    border: .01rem solid gray; 
+    border-radius: .5rem;
+}
+

@@ -1,8 +1,13 @@
+---
+icon: material/translate
+---
 # Font Convert
 
 ## Learn custom font in bedrock
 
 To learn more about custom font in bedrock, you can visit the [Bedrock Wiki](https://wiki.bedrock.dev/concepts/emojis#custom-emojis)
+
+---
 
 ## Auto convert in furnace
 
@@ -23,3 +28,5 @@ To ignore auto convert font, you can add the following to the `furnace.json` fil
     }
 }
 ```
+
+---
