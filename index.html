@@ -37,12 +37,23 @@
                     <div id="blockmaterial_suggestions" class="suggestion" class="hidden"></div>
                 </div>
             </div>
-            <select id="modelengine_model" class="bg-[#282c38] rounded-sm shadow-sm w-full h-8 pl-1.5">
-                <option value="">Model Engine Generate Model: Null</option>
-                <option value="true">Model Engine Generate Model: True</option>
-                <option value="false">Model Engine Generate Model: False</option>
-                <option value="modelengine3">Model Engine Generate Model: ModelEngine3</option>
-            </select>
+            <div class="flex flex-row w-full gap-x-1.5">
+                <div class="w-1/2">
+                    <select id="modelengine_model" class="bg-[#282c38] rounded-sm shadow-sm w-full h-8 pl-1.5">
+                        <option value="">Model Engine Generate Model: Null</option>
+                        <option value="true">Model Engine Generate Model: True</option>
+                        <option value="false">Model Engine Generate Model: False</option>
+                        <option value="modelengine3">Model Engine Generate Model: ModelEngine3</option>
+                    </select>
+                </div>
+                <div class="w-1/2">
+                    <select id="rename_model_files" class="bg-[#282c38] rounded-sm shadow-sm w-full h-8 pl-1.5">
+                        <option value="">Rename Model Files: Null</option>
+                        <option value="true">Rename Model Files: True</option>
+                        <option value="false">Rename Model Files: False</option>
+                    </select>
+                </div>
+            </div>            
             <div class="flex flex-row w-full gap-x-1.5">
                 <div class="w-1/2">
                     <input id="modelengine_item" class="bg-[#282c38] rounded-sm shadow-sm w-full h-8 pl-1.5" type="text" placeholder="ModelEngine Item">

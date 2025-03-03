@@ -124,6 +124,7 @@ function add_content() {
         const material = document.getElementById("material").value
         const blockmaterial = document.getElementById("blockmaterial").value
         const modelengine_model = document.getElementById("modelengine_model").value
+        const rename_model_files = document.getElementById("rename_model_files").value
         const modelengine_item = document.getElementById("modelengine_item").value
         const modelengine_namespace = document.getElementById("modelengine_namespace").value
 
@@ -146,9 +147,14 @@ function add_content() {
             }
         }
 
+        if (rename_model_files != "") {
+            code_obj["rename_model_files"] = rename_model_files === "true";
+        }        
+
         document.getElementById("material").value = ""
         document.getElementById("blockmaterial").value = ""
         document.getElementById("modelengine_model").value = ""
+        document.getElementById("rename_model_files").value = ""
         document.getElementById("modelengine_item").value = ""
         document.getElementById("modelengine_namespace").value = ""
     } else if (document.getElementById("mode-items").classList.contains("flex")) {
