@@ -1,0 +1,4 @@
+bg - obsidian
+link - blue-300
+discord - blue-500
+nav item - gray-500

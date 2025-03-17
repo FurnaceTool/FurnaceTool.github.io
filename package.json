@@ -1,0 +1,18 @@
+{
+  "name": "furnacewebsite",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/style.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/style.css"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.12",
+    "ace-builds": "^1.39.0",
+    "tailwindcss": "^4.0.12"
+  }
+}

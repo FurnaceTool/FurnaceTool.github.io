@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+    --color-obsidian: #0C1215;
+    --color-arsenic: #11181C;
+    --color-purple-dark: #25202B;
+}
+
+@theme {
+    --animate-spin-pause: spin-pause 2s linear infinite;
+
+    @keyframes spin-pause {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(360deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }  
+    }
+}
