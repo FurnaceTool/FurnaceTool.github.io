@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furnace</title>
+    <link rel="icon" href="src/images/logo_nobg.png" type="image/png">
+
+    <!--Load Resources-->
+    <script type="importmap">
+        {
+            "imports": {
+                "marked": "https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.7/lib/marked.esm.min.js",
+                "highlight.js": "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/es/highlight.min.js"
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/docs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+    <script src="https://kit.fontawesome.com/24fada58cd.js" crossorigin="anonymous"></script>
+
+</head>
+<body class="flex items-center flex-col font-mono bg-obsidian text-white m-0 p-0">
+    <script>fetch('/base/nav.html').then(response => response.text()).then(data => document.body.insertAdjacentHTML('afterbegin', data))</script>
+    <div class="flex flex-row w-full">
+        <div id="sidebar" class="hidden md:flex flex-col w-2xs h-[calc(100vh-64px)] py-6 pl-6 pr-3 overflow-y-auto">
+            <script src="src/scripts/docs/sidebar.js" type="module"></script>
+            <p class="border-1 border-gray-800 rounded-lg w-60 h-10 flex items-center justify-center"><i class="fa-solid fa-book mr-1.5"></i> Have a nice day</p>
+        </div>
+        <div id="content_container" class="flex flex-row md:w-[calc(100%-288px)] w-full py-6 pr-6 h-[calc(100vh-64px)] overflow-y-auto">
+            <article id="content" class="markdown-body w-[calc(100%-288px)]"></article>
+            <div id="tabel_of_content" class="hidden md:block w-2xs pl-3 h-full">
+                <div class="fixed overflow-y-auto">
+                    <span class="font-semibold">Table of content</span>
+                    <div id="tabel_of_content_items" class="flex flex-col w-full"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

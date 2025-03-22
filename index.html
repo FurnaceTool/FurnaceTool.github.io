@@ -15,36 +15,16 @@
 
 </head>
 <body class="flex items-center flex-col font-mono bg-obsidian text-white m-0 p-0">
-    <nav class="flex flex-row items-center justify-between w-full h-16 border-b-2 border-gray-800 shadow">
-        <a href="/" class="flex items-center w-1/2 h-16 p-2 hover:text-blue-300">
-            <img src="src/images/logo_nobg.png" alt="Furnace Logo" class="block w-16 h-16">
-            <h1 class="text-2xl hidden md:inline-block">Furnace</h1>
-        </a>
-        <div class="flex items-center justify-end w-1/2 h-16 p-2">
-            <div class="hidden md:block">
-                <a href="/docs" class="text-xl px-2 w-16 h-16 hover:text-gray-500 hover:font-bold"><i class="fa-solid fa-book-open"></i> Docs</a>
-                <a href="/discord" class="text-xl px-2 w-16 h-16 hover:text-blue-500 hover:font-bold group/nav-discord"><i class="fa-brands fa-discord group-hover/nav-discord:animate-spin-pause"></i> Discord</a>
-                <a href="https://github.com/FurnaceTool" class="text-xl px-2 w-16 h-16 hover:text-gray-500 hover:font-bold"><i class="fa-brands fa-github"></i> Github</a>
-            </div>
-            <div class="block md:hidden group/nav-menu">
-                <button class="dropdown-btn text-xl px-2 w-16 h-16 cursor-pointer hover:text-gray-500" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"><i class="fa-solid fa-bars dropdown-btn"></i></button>
-                <div id="mobile-menu" class="dropdown-menu absolute hidden rounded right-0 z-10 items-center justify-start bg-purple-dark p-2 group-hover/nav-menu:block">
-                    <a href="/docs" class="block rounded content-center text-xl px-2 w-full h-8 text-slate-500 hover:text-white hover:font-bold hover:bg-blue-600"><i class="fa-solid fa-book-open"></i> Docs</a>
-                    <a href="/discord" class="block rounded content-center text-xl px-2 w-full h-8 text-slate-500 hover:text-white hover:font-bold hover:bg-blue-600 group/nav-discord"><i class="fa-brands fa-discord group-hover/nav-discord:animate-spin-pause"></i> Discord</a>
-                    <a href="https://github.com/FurnaceTool" class="block rounded content-center text-xl px-2 w-full h-8 text-slate-500 hover:text-white hover:font-bold hover:bg-blue-600"><i class="fa-brands fa-github"></i> Github</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <script>fetch('/base/nav.html').then(response => response.text()).then(data => document.body.insertAdjacentHTML('afterbegin', data));</script>
     <div class="rounded shadow bg-gray-700 w-95/100 my-3 p-3">
         <h1 class="text-2xl font-bold">Adding Content</h1>
         <div>
-            <div id="mode-settings" class="w-full flex flex-row flex-wrap my-3"></div>
-            <div id="mode-items" class="w-full hidden flex-row flex-wrap my-3"></div>
+            <div id="mode-settings" class="w-full hidden flex-row flex-wrap my-3"></div>
+            <div id="mode-items" class="w-full flex flex-row flex-wrap my-3"></div>
             <div id="mode-fonts" class="w-full hidden flex-row flex-wrap my-3"></div>
         </div>
         <div id="view" class="w-full h-60 mx-auto rounded">
-            <div id="divview" class="flex flex-row flex-wrap w-full h-60 mx-auto rounded overflow-y-scroll"></div>
+            <div id="divview" class="hidden flex-row flex-wrap w-full h-60 mx-auto rounded overflow-y-scroll"></div>
             <div id="jsonview" class="w-full h-60 mx-auto rounded"></div>
         </div>
     </div>

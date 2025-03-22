@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/src/styles/style.css" rel="stylesheet">
+        <link href="/src/images/logo.png" rel="icon" type="image/png">
+        <script src="https://kit.fontawesome.com/24fada58cd.js" crossorigin="anonymous"></script>
+        <title>Furnace</title>
+    </head>
+    <body class="bg-[#222831] h-screen m-0 p-0">
+        <nav class="flex items-center w-full h-16 shadow-md border-r-2 border-gray-800 mb-3">
+            <button id="docs-sidebar-btn" class="h-10 w-10 text-xl hidden"><i class="fa-solid fa-bars"></i></button>
+            <a href="/" class="flex items-center">
+                <img class="inline h-14 w-14 m-0 p-0" src="/src/images/logo-nobg.png">
+                <span class="h-10 text-3xl font-bold content-center text-center">Furnace</span>
+            </a>
+            <div class="absolute flex right-0 mr-1.5 items-center">
+                <a href="https://discord.gg/4jvpVGpeBE">
+                    <span class="hover:text-blue-500 h-10 text-xl font-bold content-center text-center"><i class="fa-brands fa-discord"></i> Discord</span>
+                </a>
+            </div>
+        </nav>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <p class="bg-[#222630] px-4 py-3 h-14 text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]" id="code"></p>
+            <button onclick="copyCode()" class="relative my-3 inline-flex h-12 active:scale-95 transistion overflow-hidden rounded-lg p-[1px] focus:outline-hidden">
+                <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#e7029a_0%,#f472b6_50%,#bd5fff_100%)]"></span>
+                <span class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-slate-950 px-7 text-sm font-medium text-white backdrop-blur-3xl gap-2 undefined">
+                    Copy GiftCode <i class="fa-solid fa-copy"></i>
+                </span>
+            </button>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="absolute opacity-0 transition-opacity delay-100 truncate bottom-0 right-0 h-full max-h-12 w-full max-w-96 p-4 mb-4 text-sm rounded-sm bg-[#282c38] shadow-sm" id="toast">
+            <span class="text-gray-500 my-auto"><i class="fa-solid fa-circle-check text-green-700"></i> Code copied to clipboard!</span>
+        </div>
+
+        <script>
+            var urlParams = new URLSearchParams(window.location.search)
+            const code = urlParams.get('code')
+            const toast = document.getElementById('toast')
+            document.getElementById("code").innerText = code
+
+            function copyCode() {
+                navigator.clipboard.writeText(code)
+                    .then(() => {
+                        toast.classList.replace('opacity-0', 'opacity-100')
+                        setTimeout(() => toast.classList.replace('opacity-100', 'opacity-0'), 3000)
+                    })
+                    .catch(err => console.error('Failed to copy:', err))
+            }
+        </script>
+    </body>
+</html>

@@ -21,3 +21,43 @@
         }  
     }
 }
+
+@layer utilities {
+    ::-webkit-scrollbar {
+        scrollbar-gutter: stable;
+        width: 8px;
+        height: 8px;
+    }
+  
+    ::-webkit-scrollbar-track {
+      border-radius: 100vh;
+      background: var(--color-gray-800);
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-arsenic);
+      border-radius: 100vh;
+      border: 3px solid var(--color-arsenic);
+    }
+  
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-obsidian);
+    }
+
+    .suggestion {
+        border: 1px solid #ccc;
+        background: var(--color-arsenic);
+        position: absolute;
+        max-height: 100px;
+        overflow-y: scroll;
+        width: 47%;
+        z-index: 1000;
+    }
+    .suggestion div {
+        padding: 8px;
+        cursor: pointer;
+    }
+    .suggestion div:hover {
+        background: var(--color-gray-800);
+    }
+}

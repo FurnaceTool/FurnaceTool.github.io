@@ -22,13 +22,13 @@ export class CodePreview {
         })
         this.code.setShowPrintMargin(false)
 
-        this.code.setValue(localStorage.getItem("code") || "{}")
-        this.load_preview_items()
+        // this.code.setValue(localStorage.getItem("code") || "{}")
+        // this.load_preview_items()
         
-        this.code.session.on('change', (delta) => {
-            localStorage.setItem("code", this.code.getValue())
-            this.load_preview_items()
-        })
+        // this.code.session.on('change', (delta) => {
+        //     localStorage.setItem("code", this.code.getValue())
+        //     this.load_preview_items()
+        // })
 
     }
 

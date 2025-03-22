@@ -4,7 +4,7 @@
   "description": "",
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/style.css --watch",
@@ -13,6 +13,8 @@
   "dependencies": {
     "@tailwindcss/cli": "^4.0.12",
     "ace-builds": "^1.39.0",
+    "highlight.js": "^11.11.1",
+    "marked": "^15.0.7",
     "tailwindcss": "^4.0.12"
   }
 }
