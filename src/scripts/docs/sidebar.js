@@ -122,12 +122,12 @@ class Table_of_Content {
         
         if (Object.keys(data).length == 1 && Object.values(data)[0][1] == 1) {
             tabel_of_content_div.hidden = true
-            content.classList.replace("w-[calc(100%-288px)]", "w-full")
+            content.classList.replace("md:w-[calc(100%-288px)]", "md:w-full")
             return
         }
 
         tabel_of_content_div.hidden = false
-        content.classList.replace("w-full", "w-[calc(100%-288px)]")
+        content.classList.replace("md:w-full", "md:w-[calc(100%-288px)]")
 
         Object.entries(data).forEach(([id, values]) => {
             if (values[1] == 1) return
