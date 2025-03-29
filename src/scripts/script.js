@@ -222,8 +222,8 @@ function add_content() {
         const symbol = charToHex(document.getElementById("symbol").value)
         const offset_x = document.getElementById("offset-x").value != "" ? parseInt(document.getElementById("offset-x").value) : ""
         const offset_y = document.getElementById("offset-y").value != "" ? parseInt(document.getElementById("offset-y").value) : ""
-        const size_x = document.getElementById("size-width").value != "" ? parseInt(document.getElementById("size-width").value) : ""
-        const size_y = document.getElementById("size-height").value != "" ? parseInt(document.getElementById("size-height").value) : ""
+        const size_x = document.getElementById("size-width").value != "" ? parseInt(document.getElementById("size-width").value) : null
+        const size_y = document.getElementById("size-height").value != "" ? parseInt(document.getElementById("size-height").value) : null
         const ignore = document.getElementById("ignore").value != "" ? document.getElementById("ignore").value.toLowerCase() === "true" : ""
         const row = document.getElementById("gui-bg").value != "" ? parseInt(document.getElementById("gui-bg").value) : ""
 
@@ -234,7 +234,10 @@ function add_content() {
             properties["gui"] = {}
             properties["gui"]["row"] = row
             if (offset_x !== "" || offset_y !== "") { properties["gui"]["offset"] = [offset_x || 0, offset_y || 0] }
-            if (size_x !== "" || size_y !== "") { properties["gui"]["size"] = [size_x || "default", size_y || "default"] }
+            const guiImage = document.getElementById("gui-image")
+            const defaultWidth = guiImage.naturalWidth || "default" 
+            const defaultHeight = guiImage.naturalHeight || "default"
+            properties["gui"]["size"] = [size_x !== null ? size_x : defaultWidth, size_y !== null ? size_y : defaultHeight]
         }
         if (Object.keys(properties).length === 0) return
         
