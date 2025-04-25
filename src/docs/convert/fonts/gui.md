@@ -4,6 +4,8 @@ icon: octicons/image-16
 # Custom Gui
 Because GUI in java is a font need offset but bedrock can't offset font, so you need to use **furnace.json** to customize this.
 
+Web tools: https://furnacetool.github.io
+
 ---
 ## Guided installation
 
