@@ -59,6 +59,6 @@ Because GUI in java is a font need offset but bedrock can't offset font, so you 
     }
     ```
 
-- You need to place the `furnace.json` file inside **`generated.zip`** according to the [specific structure](http://furnacetool.xyz/docs/convert/furnacejson/#where-to-put-furnacejson-in-your-resourcepack).
+- You need to place the `furnace.json` file inside **`generated.zip`** according to the [specific structure](https://furnacetool.github.io/docs/convert/furnacejson/#where-to-put-furnacejson-in-your-resourcepack).
 
 ---
