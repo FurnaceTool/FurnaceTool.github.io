@@ -8,7 +8,7 @@ The `furnace.json` file is a JSON file that contains the configuration for the f
 
 ## Editor For furnace.json
 We have made a tool to write furnace.json simpler and avoid json syntax errors
-> [Furnace Editor](https://furnacetool.xyz/)
+> [Furnace Editor](https://furnacetool.github.io)
 
 ## Example furnace.json
 ```json
